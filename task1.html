@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Your Details</title>
+
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    
+    <form name="myForm" onsubmit="return validateForm()">
+
+        <div class="rowData">
+            <div class="label">
+                Select your source :
+            </div>
+            <div class="dataField">
+                <select id="source" name="source">
+                    <option value="gcs" selected>Google Cloud Storage</option>
+                    <option value="aws">Amazon Web Services</option>
+                    <option value="ma">Microsoft Azure</option>
+                  </select>
+            </div>
+        </div>
+        
+
+        <div class="rowData">
+            <div class="label">
+                Provide a name for pipeline:
+            </div>
+            <div class="dataField">
+                <input type="text" name="pipeline" placeholder="e.g., cust_shop_energy_gateway001" />
+            </div>
+        </div>
+
+        <div class="rowData">
+            <div class="label">
+                GCS project name :
+            </div>
+            <div class="dataField">
+                <input type="text" name="prname" placeholder="project-id" />
+            </div>
+        </div>
+
+        <div class="rowData">
+            <div class="label">
+                GCS bucket name : 
+            </div>
+            <div class="dataField">
+                <input type="text" name="bname" placeholder="gs://your-bucket" />
+            </div>
+        </div>
+
+        <div class="rowData">
+            <div class="label">
+                Input Cloud Storage File(s) : 
+            </div>
+            <div class="dataField">
+                <input type="text" name="csfile" placeholder="GCS location of your files" />
+            </div>
+        </div>
+
+        <div class="rowData">
+            <div class="label">
+                GCS credentials : 
+            </div>
+            <div class="dataField">
+                <input type="password" name="pass" placeholder="GCS location of your files" />
+            </div>
+        </div>
+
+        <div class="rowData">
+            <div class="label">
+                Run Every : 
+            </div>
+            <div class="dataField">
+                <input type="text" name="revery" placeholder="In Minutes" />
+            </div>
+        </div>
+
+        <div class="rowData">
+            <div class="label">
+                <button type="submit">Create</button>
+            </div>
+            <div class="dataField">
+                <button type="reset">Cancel</button>
+            </div>
+        </div>
+
+    </form>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

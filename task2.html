@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Table</title>
+
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table style="width:100%" id="tableJSON">
+        <tr>
+            <th rowspan="4">Machine Name</th>
+            <th rowspan="4">Machine ID</th>
+            <th colspan="3">Energy consumed(kWh)
+                <tr>
+                    <th rowspan="3">Today</th>
+                    <th rowspan="3">MTD</th>
+                    <th rowspan="3">YTD</th>
+                </tr>
+            </th>
+                
+            <th rowspan="4">Active Power(MVA)</th>
+            <th rowspan="4">Reactive Power(MVAr)</th>
+            <th rowspan="4">Current(AMPs)</th>
+            <th rowspan="4">Voltage(Volts)</th>
+            <th rowspan="4">POWER FACTOR
+                <th colspan="3">IDLE TIME</th>
+                <tr>
+                    <th>Today</th>
+                    <th>MTD</th>
+                    <th>YTD</th>
+                </tr>
+            </th>
+        </tr>
+      </table>
+
+      <script>
+            
+            var data= [
+                [
+                    'machine_name','machine_id','current','voltage','power_factor','active_power','apparent_power','reactive_power','daily_energy','monthly_energy','yearly_energy','idle_daily','idle_monthly','idle_yearly'
+                ] ,
+                [ 
+                    'Auto Winding Machine', 'machine001', 0, 0, 0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0, 0 
+                ],
+                [ 
+                    'Boiler Machine', 'machine004', 0, 0, 0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0, 0 
+                ]
+            ]
+
+            var tableBody = document.getElementById('tableJSON');
+                
+            for (var i=1; i<3; i++){
+                var tr = document.createElement('TR');
+                tableBody.appendChild(tr);
+                
+                for (var j=0; j<14; j++){
+                    var td = document.createElement('TD');
+                    td.width='75';
+                    td.appendChild(document.createTextNode(data[i][j]));
+                    console.log(data[i])
+                    tr.appendChild(td);
+                }
+            }
+      </script>
+</body>
+</html>
